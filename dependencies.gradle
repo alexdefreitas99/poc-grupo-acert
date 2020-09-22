@@ -13,7 +13,8 @@ dependencies {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
 
-    implementation "io.springfox:springfox-boot-starter:3.0.0"
+    compile 'io.springfox:springfox-swagger2:3.0.0'
+    compile 'io.springfox:springfox-swagger-ui:3.0.0'
 
     runtimeOnly 'com.h2database:h2'
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
