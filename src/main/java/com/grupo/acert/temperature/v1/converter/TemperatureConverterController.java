@@ -18,6 +18,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @Api(value = "Temperature conversions operations", produces = MediaType.APPLICATION_JSON_VALUE, tags = {"To manipulate temperature scales"})
 @RequestMapping("v1/converter")
@@ -32,7 +34,7 @@ public class TemperatureConverterController {
             @ApiResponse(code = 200, message = "Created"),
     })
     @ResponseStatus(HttpStatus.CREATED)
-    public TemperatureConverterResponse convert(@RequestBody TemperatureConverterRequest converterRequest) {
+    public TemperatureConverterResponse convert(@RequestBody @Valid TemperatureConverterRequest converterRequest) {
         return temperatureConverterService.convert(TemperatureConverterMapper.mapFrom(converterRequest))
                 .map(TemperatureConverterMapper::mapFrom)
                 .orElseThrow(() -> new BadRequestException(ErroEnum.CONVERSION_WAS_NOT_POSSIBLE));
