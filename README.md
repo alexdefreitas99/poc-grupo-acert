@@ -21,7 +21,22 @@ https://temperature-service.herokuapp.com/swagger-ui/index.html
 2. Habilitar annotation processing nas configurações da IDE
 
 ```bash
-$ ./gradlew bootRun
+$ sdk install java 14.0.2.hs-adpt
+```
+```bash
+$ sdk use java 14.0.2.hs-adpt
+```
+```bash
+$ make run # Run the app
+```
+```bash
+$ make docker-stop # Stop docker
+```
+```bash
+$ make docker-build # build docker image
+```
+```bash
+$ make docker-run # run docker image
 ```
 
 # Como utilizar esta API (Application Programming Interface)
