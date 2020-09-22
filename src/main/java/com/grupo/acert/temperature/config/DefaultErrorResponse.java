@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DefaultErrorResponse {
-    private String description;
     private String service;
+    private String description;
 }

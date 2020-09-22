@@ -32,7 +32,7 @@ public class TemperatureConverterController {
             @ApiResponse(code = 200, message = "Created"),
     })
     @ResponseStatus(HttpStatus.CREATED)
-    public TemperatureConverterResponse convertCelsiusToFahrenheit(@RequestBody TemperatureConverterRequest converterRequest) {
+    public TemperatureConverterResponse convert(@RequestBody TemperatureConverterRequest converterRequest) {
         return temperatureConverterService.convert(TemperatureConverterMapper.mapFrom(converterRequest))
                 .map(TemperatureConverterMapper::mapFrom)
                 .orElseThrow(() -> new BadRequestException(ErroEnum.CONVERSION_WAS_NOT_POSSIBLE));

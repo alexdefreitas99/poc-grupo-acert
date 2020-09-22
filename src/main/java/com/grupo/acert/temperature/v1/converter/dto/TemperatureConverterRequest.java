@@ -10,10 +10,10 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 public class TemperatureConverterRequest {
-    @ApiModelProperty(value = "${temperature.converter.request.fromScale.property}", required = true)
+    @ApiModelProperty(value = "A escala a ser convertida", required = true)
     private final TemperatureScaleEnum fromScale;
-    @ApiModelProperty(value = "Agenda subject.", example = "Legislative proposals.", required = true)
+    @ApiModelProperty(value = "O valor a ser convertido", example = "Legislative proposals.", required = true)
     private final double value;
-    @ApiModelProperty(value = "Agenda subject.", example = "Legislative proposals.", required = true)
+    @ApiModelProperty(value = "Para qual escala converter", example = "Legislative proposals.", required = true)
     private final List<TemperatureScaleEnum> toScale;
 }

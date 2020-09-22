@@ -12,6 +12,7 @@ dependencies {
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
+    testImplementation("org.springframework.cloud:spring-cloud-contract-wiremock:2.1.1.RELEASE")
 
     compile 'io.springfox:springfox-swagger2:3.0.0'
     compile 'io.springfox:springfox-swagger-ui:3.0.0'
