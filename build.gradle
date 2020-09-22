@@ -4,6 +4,8 @@ plugins {
 	id 'java'
 }
 
+apply from: "dependencies.gradle"
+
 group = 'com.grupo.acert'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '14'
@@ -17,20 +19,6 @@ configurations {
 repositories {
 	mavenCentral()
 	jcenter()
-}
-
-dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-hateoas'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	compileOnly 'org.projectlombok:lombok'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	runtimeOnly 'com.h2database:h2'
-	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
-	implementation "io.springfox:springfox-boot-starter:3.0.0"
 }
 
 test {
