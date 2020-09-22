@@ -20,4 +20,6 @@ dependencies {
     runtimeOnly 'com.h2database:h2'
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
     compile group: 'javax.persistence', name: 'javax.persistence-api', version: '2.2'
+
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
 }

@@ -33,80 +33,41 @@ Convertendo graus celsius em fahrenheit em :
 
 Request:
 
-[POST] https://voting-sessions-available.herokuapp.com/voting-sessions/v1/agenda
+[GET] https://temperature-service.herokuapp.com/v1/converter/
 ```json
-{ "subject": "Agenda testing vote" }
+{
+    "fromScale": "CELSIUS",
+    "toScale": ["FAHRENHEIT", "KELVIN"],
+    "value": 1.521489293
+}
 ```
 Response: 
 ```json
 {
-  "id": 4,
-  "subject": "Agenda testing vote",
-  "votesInFavor": 0,
-  "votesAgainst": 0
+    "id": 2,
+    "valueKelvin": 274.671489293,
+    "valueFarenheith": 34.7386807274,
+    "valueCelsius": null,
+    "value": 1.521489293
 }
 ```
 
 ## Step 2:
-Criando uma sessão de votação para a pauta criada anteriormente.
+Buscando temperatura de hoje (Em graus celsius)
 
 Request:
 
-[POST] https://voting-sessions-available.herokuapp.com/voting-sessions/v1/session/agenda/4
-```json
-{ "minuteDuration": 3 }
-```
+[GET] https://temperature-service.herokuapp.com/v1/check/Porto Alegre
 Response: 
 ```json
 {
-  "sessionId": 10,
-  "agendaId": 4,
-  "openingDate": "2020-03-23T22:25:19.628266678",
-  "closingDate": "2020-03-23T22:28:19.622715976"
+    "name": "Porto Alegre",
+    "id": 3452925,
+    "cod": 200,
+    "temp": 15.83,
+    "feelsLike": 11.75,
+    "tempMin": 15.56,
+    "tempMax": 16.0,
+    "humidity": 59.0
 }
 ```
-
-## Step: 3
-Votando
-
-Request:
-
-[POST] https://voting-sessions-available.herokuapp.com/voting-sessions/v1/voting/session/10/agenda/4
-```json
-{
-	"associatedCpf": "54125851085",
-	"vote": true
-}
-```
-Response:
-```json
-{
-	"id": 20
-}
-```
-
-## Para ver o total de votos em uma pauta
-[GET] https://voting-sessions-available.herokuapp.com/voting-sessions/v1/agenda/4
-
-Response: 
-```json
-{
-  "id": 4,
-  "subject": "Agenda testing vote",
-  "votesInFavor": 15,
-  "votesAgainst": 6
-}
-```
-
-# Bônus
-
-## Para ver o total de votes de pautas em sessões especificas.
-Obs: The result of each session will only be available after closing
-
-**Esta funcionalidade esta disponíbel apenas para quem rodar a aplicação localmente**
-```bash
-$ kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic agenda.queuing --from-beginning
-```
-
-# Documentação em inglês:
-https://github.com/alexdefreitas99/voting-sessions/blob/master/README.EN.md

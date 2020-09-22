@@ -23,7 +23,7 @@ public class TemperatureConverterMapper {
                 .builder()
                 .id(temperatureConverterBO.getId())
                 .valueCelsius(temperatureConverterBO.getValueCelsius())
-                .valueFarenheith(temperatureConverterBO.getValueFahrenheit())
+                .valueFahrenheit(temperatureConverterBO.getValueFahrenheit())
                 .valueKelvin(temperatureConverterBO.getValueKelvin())
                 .value(temperatureConverterBO.getValue())
                 .build();

@@ -4,6 +4,7 @@ import com.grupo.acert.temperature.v1.converter.mapper.TemperatureConverterMappe
 import com.grupo.acert.temperature.v1.converter.repo.TemperatureConverterHistoricEntity;
 import com.grupo.acert.temperature.v1.converter.repo.TemperatureConverterRepository;
 import com.grupo.acert.temperature.v1.converter.service.converters.TemperatureConverter;
+import com.grupo.acert.temperature.v1.utils.TemperatureScaleEnum;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -24,7 +25,9 @@ public class TemperatureConverterService {
 
     public Optional<TemperatureConverterBO> convert(TemperatureConverterBO temperatureConverterBO) {
         for (TemperatureConverter converter : converters) {
-            if (temperatureConverterBO.getToScale().contains(converter.convertTo())) {
+            if(temperatureConverterBO.getToScale().contains(TemperatureScaleEnum.ALL)){
+                converter.convert(temperatureConverterBO);
+            } else if (temperatureConverterBO.getToScale().contains(converter.convertTo())){
                 converter.convert(temperatureConverterBO);
             }
         }

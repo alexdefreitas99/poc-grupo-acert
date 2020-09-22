@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "api.openweather.map",
+      "type": "java.lang.String",
+      "description": "Api to search for temperature."
+    },
+    {
+      "name": "api.openweather.map.key",
+      "type": "java.lang.String",
+      "description": "Key to access open api wather map."
+    }
+  ] }

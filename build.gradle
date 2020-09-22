@@ -24,3 +24,5 @@ repositories {
 test {
 	useJUnitPlatform()
 }
+
+compileJava.inputs.files(processResources)

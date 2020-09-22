@@ -8,7 +8,7 @@ import lombok.Getter;
 public class TemperatureConverterResponse {
     private final Long id;
     private final Double valueKelvin;
-    private final Double valueFarenheith;
+    private final Double valueFahrenheit;
     private final Double valueCelsius;
     private final Double value;
 }

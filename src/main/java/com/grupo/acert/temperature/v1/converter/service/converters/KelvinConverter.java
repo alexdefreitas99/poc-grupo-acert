@@ -8,26 +8,25 @@ import org.springframework.stereotype.Component;
 public class KelvinConverter implements TemperatureConverter {
 
     @Override
-    public TemperatureConverterBO convert(TemperatureConverterBO temperatureConverterBO) {
-        return switch (temperatureConverterBO.getFromScale()) {
-            case CELSIUS -> convertCelsiusToKelvin(temperatureConverterBO);
-            case FAHRENHEIT -> convertFahrenheitToKelvin(temperatureConverterBO);
-            default -> temperatureConverterBO;
-        };
-    }
-
-    @Override
     public TemperatureScaleEnum convertTo() {
         return TemperatureScaleEnum.KELVIN;
     }
 
-    private TemperatureConverterBO convertCelsiusToKelvin(TemperatureConverterBO temperatureConverterBO) {
+    @Override
+    public TemperatureConverterBO convertFromCelsius(TemperatureConverterBO temperatureConverterBO) {
         temperatureConverterBO.setValueKelvin(temperatureConverterBO.getValue() + 273.15);
         return temperatureConverterBO;
     }
 
-    private TemperatureConverterBO convertFahrenheitToKelvin(TemperatureConverterBO temperatureConverterBO) {
+    @Override
+    public TemperatureConverterBO convertFromFahrenheit(TemperatureConverterBO temperatureConverterBO) {
         temperatureConverterBO.setValueKelvin((temperatureConverterBO.getValue() - 32) * 5/9 + 273.15);
+        return temperatureConverterBO;
+    }
+
+    @Override
+    public TemperatureConverterBO convertFromKelvin(TemperatureConverterBO temperatureConverterBO) {
+        temperatureConverterBO.setValueKelvin(temperatureConverterBO.getValue());
         return temperatureConverterBO;
     }
 }
