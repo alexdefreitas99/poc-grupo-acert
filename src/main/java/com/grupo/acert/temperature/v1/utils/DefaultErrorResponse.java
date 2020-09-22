@@ -1,4 +1,4 @@
-package com.grupo.acert.temperature.config;
+package com.grupo.acert.temperature.v1.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -19,7 +19,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@Api(value = "Temperature conversions operations", produces = MediaType.APPLICATION_JSON_VALUE, tags = {"All operations are saved in DB"})
+@Api(value = "Temperature conversions operations", produces = MediaType.APPLICATION_JSON_VALUE, tags = {"To manipulate temperature scales"})
 @RequestMapping("v1/converter")
 @AllArgsConstructor
 public class TemperatureConverterController {

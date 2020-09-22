@@ -1,12 +1,6 @@
-# poc-grupo-acert
+# Temperature Serivce
 
-# Voting session
-[![Build Status](https://travis-ci.org/alexdefreitas99/voting-sessions.svg?branch=master)](https://travis-ci.org/alexdefreitas99/voting-sessions)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=alexdefreitas99_voting-sessions&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=alexdefreitas99_voting-sessions)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=alexdefreitas99_voting-sessions&metric=code_smells)](https://sonarcloud.io/dashboard?id=alexdefreitas99_voting-sessions)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=alexdefreitas99_voting-sessions&metric=bugs)](https://sonarcloud.io/dashboard?id=alexdefreitas99_voting-sessions)
-
-Este é um projeto para trabalhar com temperaturas, atualmente converter e verifica a temperatura do dia em determinada cidade.
+Este é um projeto para trabalhar com temperaturas, atualmente converte e verifica a temperatura do dia em determinada cidade.
 
 # Tecnologias utilizadas
 - **Java 14.** 
@@ -18,11 +12,14 @@ Este é um projeto para trabalhar com temperaturas, atualmente converter e verif
 
 # Documentação
 ## Swagger
-http://localhost:8283/swagger-ui.html
+http://localhost:8283/swagger-ui/index.html
 
-https://temperature-service.herokuapp.com/swagger-ui.html
+https://temperature-service.herokuapp.com/swagger-ui/index.html
 
 # Como rodar este projeto localmente
+1. Instalar o plugin do lombok.
+2. Habilitar annotation processing nas configurações da IDE
+
 ```bash
 $ ./gradlew bootRun
 ```
@@ -52,7 +49,7 @@ Response:
 }
 ```
 
-Convertendo kelvin celsius em todas escalas implementadas : 
+Convertendo kelvin em todas escalas implementadas : 
 
 Request:
 

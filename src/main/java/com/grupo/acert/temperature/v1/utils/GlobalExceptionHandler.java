@@ -1,4 +1,4 @@
-package com.grupo.acert.temperature.config;
+package com.grupo.acert.temperature.v1.utils;
 
 import com.grupo.acert.temperature.v1.exceptions.BadRequestException;
 import com.grupo.acert.temperature.v1.exceptions.BusinessException;
